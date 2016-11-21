@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WooCommerce Smart Subscription
- * Plugin URI: https://github.com/BigTonni
+ * Plugin URI: https://github.com/BigTonni/woocommerce-smart-subscription
  * Description: To create a subscription during checkout.
  * Author: Anton Shulga
  * Author URI: https://github.com/BigTonni

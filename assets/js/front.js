@@ -22,24 +22,4 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $('#wss_create_subscription').on('click', function (e) {
-        e.preventDefault();
-        var self = this;
-        var data = {action: 'wss_create_subscription'};
-        $.ajax({
-            method: 'POST',
-            dataType: 'json',
-            url: WSSFrontParams.ajax_url,
-            data: data,
-            success: function (response) {
-
-                if (response.result) {
-                    //success
-                } else {
-                    //error
-                }
-            }
-        });
-    });
-
 });

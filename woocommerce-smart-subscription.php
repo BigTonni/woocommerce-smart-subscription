@@ -97,7 +97,7 @@ class WC_Smart_Subscription {
         include_once( 'includes/wss-helpers.php' );
         include_once( 'includes/class-wss-assets.php' );
         include_once( 'includes/class-wss-checkout.php' );
-        include_once( 'includes/wss-ajax.php' );
+//        include_once( 'includes/wss-ajax.php' );
     }
 
     /**
@@ -108,6 +108,7 @@ class WC_Smart_Subscription {
         register_activation_hook(__FILE__, array($this, 'activate'));
         
         add_action('init', array($this, 'init'), 0);
+        add_filter( 'plugin_row_meta', array($this, 'custom_plugin_row_meta'), 10, 2 );
         
         register_deactivation_hook(__FILE__, array($this, 'deactivate'));
     }
@@ -117,8 +118,19 @@ class WC_Smart_Subscription {
      */
     public function init() {
         // Set up localisation.
-        $this->load_plugin_textdomain();
-        
+        $this->load_plugin_textdomain();        
+    }
+    
+    function custom_plugin_row_meta( $links, $file ) {
+        if ( $file == WSS_PLUGIN_BASENAME ) {
+                $last_el= array_pop($links);
+		$new_links['develop'] = __( 'By ', WSS_TEXT_DOMAIN ) .'<a href="" target="_blank">Sergey Moroka</a>';
+                $new_links[] = $last_el;
+		
+		$links = array_merge( $links, $new_links );
+        }
+	
+	return $links;
     }
 
     /**

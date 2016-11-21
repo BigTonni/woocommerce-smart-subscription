@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce Smart Subscription\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon Nov 21 2016 13:21:32 GMT+0200 (EET)\n"
-"POT-Revision-Date: Mon Nov 21 2016 13:23:37 GMT+0200 (EET)\n"
+"POT-Revision-Date: Mon Nov 21 2016 18:44:01 GMT+0200 (EET)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -29,7 +29,7 @@ msgid "WooCommerce Smart Subscription"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://github.com/BigTonni"
+msgid "https://github.com/BigTonni/woocommerce-smart-subscription"
 msgstr ""
 
 #. Description of the plugin
@@ -40,6 +40,10 @@ msgstr ""
 msgid "Anton Shulga"
 msgstr ""
 
+#. URI of the plugin
+msgid "https://github.com/BigTonni"
+msgstr ""
+
 #: ../../woocommerce-smart-subscription.php:29
 #, php-format
 msgid ""
@@ -48,54 +52,46 @@ msgid ""
 "Smart Subscription to work. Please install & activate WooCommerce &raquo;"
 msgstr ""
 
-#: ../../includes/wss-ajax.php:25
-msgid "Error."
+#: ../../woocommerce-smart-subscription.php:127
+msgid "By "
 msgstr ""
 
-#: ../../includes/wss-ajax.php:28
-msgid "Subscription generated successfully."
-msgstr ""
-
-#: ../../includes/class-wss-checkout.php:35
+#: ../../includes/class-wss-checkout.php:33
 msgid "Please select subscription recurring"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:38
+#: ../../includes/class-wss-checkout.php:36
 msgid "Please select subscription period"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:41
+#: ../../includes/class-wss-checkout.php:39
 msgid "Please select subscription start date"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:44
+#: ../../includes/class-wss-checkout.php:42
 msgid "Please select subscription hours"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:47
+#: ../../includes/class-wss-checkout.php:45
 msgid "Please select subscription minutes"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:58
+#: ../../includes/class-wss-checkout.php:56
 msgid "Do you want to subscribe?"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:64
+#: ../../includes/class-wss-checkout.php:62
 msgid "Subscription Details"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:77
+#: ../../includes/class-wss-checkout.php:75
 msgid "Recurring"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:97
+#: ../../includes/class-wss-checkout.php:95
 msgid "Start Date"
 msgstr ""
 
-#: ../../includes/class-wss-checkout.php:98
+#: ../../includes/class-wss-checkout.php:96
 msgid "YYYY-MM-DD"
-msgstr ""
-
-#: ../../includes/class-wss-checkout.php:123
-msgid "Create subscription"
 msgstr ""

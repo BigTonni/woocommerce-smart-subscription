@@ -16,11 +16,9 @@ class WSS_Checkout {
      * Initialize the admin actions.
      */
     public function __construct() {
-        // add_filter('woocommerce_order_button_html', array($this, 'change_checkout_form'));
-        add_action( 'woocommerce_after_checkout_form', array( $this, 'change_checkout_form_new' ) );
         add_action( 'woocommerce_after_order_notes', array( $this, 'wss_subscription_fields' ) );
         add_action( 'woocommerce_checkout_process', array( $this, 'wss_checkout_subscription_process' ) );
-        add_action( 'woocommerce_payment_complete', array( $this, 'wss_create_subscription' ), 10, 2 );
+        add_action( 'woocommerce_payment_complete', array( $this, 'wss_create_subscription' ), 10 );
         add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'wss_save_subscription_fields' ) );
     }
 
@@ -51,17 +49,17 @@ class WSS_Checkout {
     }
 
     public function wss_subscription_fields( $checkout ) {
-
+      
         woocommerce_form_field( 'wss_show_subscription_fields', array(
             'type'      => 'checkbox',
             'class'     => array( 'wss-form-field show-subscription-fields' ),
-            'label'     => __( 'Do you want to subscribe?' ),
+            'label'     => __( 'Do you want to subscribe?', WSS_TEXT_DOMAIN ),
             'required'  => false,
             'value'     => true,
             'default'   => false
         ), false );
 
-        echo '<div id="wss_subscription_field"><h2>' . __( 'Subscription Details' ) . '</h2>';
+        echo '<div id="wss_subscription_field"><h2>' . __( 'Subscription Details', WSS_TEXT_DOMAIN ) . '</h2>';
         // Recurring field
         woocommerce_form_field( 'wss_billing_interval', array(
             'type'      => 'select',
@@ -97,7 +95,7 @@ class WSS_Checkout {
             'label'         => __( 'Start Date' ),
             'placeholder'   => __( 'YYYY-MM-DD' ),
             'required'      => true,
-        ), date( 'Y-m-d' ) );
+        ), current_time( 'Y-m-d' ) );
         echo '@';
         // Start hours
         woocommerce_form_field( 'wss_start_hours', array(
@@ -106,7 +104,7 @@ class WSS_Checkout {
             'label'         => __( '' ),
             'placeholder'   => __( '' ),
             'required'      => true
-        ), date( 'H' ) );
+        ), current_time( 'H' ) );
         echo ':';
         // Start minutes
         woocommerce_form_field( 'wss_start_minutes', array(
@@ -115,14 +113,8 @@ class WSS_Checkout {
             'label'         => __( '' ),
             'placeholder'   => __( '' ),
             'required'      => true
-        ), date( 'i' ) );
+        ), current_time( 'i' ) );
         echo '</div>';
-    }
-
-    public function change_checkout_form($html) {
-        $order_button_text = __('Create subscription', 'WSS_TEXT_DOMAIN');
-        $text = '<input type="button" class="button alt" name="woocommerce_checkout_create_subscription" id="wss_create_subscription" value="' . esc_attr($order_button_text) . '" data-value="' . esc_attr($order_button_text) . '" />';
-        return $text . $html;
     }
 
     /**
